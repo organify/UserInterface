@@ -6,20 +6,135 @@
     <title>test</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <link href="./build/css/style.min.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+    <script src="js/deploy.js"></script>
     <script src="js/main.js"></script>
 </head>
 <body>
-    <section>
-        <select>
-            <option>hello</option>
-            <option>hello2</option>
-            <option>hello3</option>
-            <option>hello4</option>
-            <option>hello5</option>
-        </select>
-        <button  onclick="UserAction()" type="submit">Search</button>
+    <section class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-form validate-form">
+                    <span class="login100-form-title p-b-34">
+                        Account Login
+                    </span>
+
+                    <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20" data-validate="Type wallet number">
+                        <input id="first-name" class="input100" type="text" name="username" placeholder="Wallet">
+                        <span class="focus-input100"></span>
+                    </div>
+                    <div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20" data-validate="Type password">
+                        <input id="string" class="input100" type="password" name="pass" placeholder="Password">
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn white-wallet" onclick="checkIfWhitelist()">
+                            Sign in
+                        </button>
+                    </div>
+
+                    <div class="w-full text-center p-t-27 p-b-239">
+                        <span class="txt1">
+                            Forgot
+                        </span>
+
+                        <a href="#" class="txt2">
+                            Wallet / password?
+                        </a>
+                    </div>
+
+                    <div class="w-full text-center">
+                        <a href="#" class="txt3">
+                            Sign Up
+                        </a>
+                    </div>
+                </div>
+
+                <div class="login100-more" style="background-image: url('images/bg-01.jpg');"></div>
+            </div>
+        </div>
+    </section>
+    <div id="dropDownSelect1"></div>
+    <section class="container">
+        <div class="submission">
+            <h3>Please enter your product information here</h3>
+            <textarea type="text" id="farmInfo"></textarea>
+            <a href="#" onclick="setGreeting1()" class="btn btn-primary">Enter your information</a>
+    </div>
+        <h1>See the information you have entered:</h1>
+        <ul class="table-responsive">
+            <li class="append-1">
+                <p>First input:</p>
+            </li>
+        </ul>
+        <!-- <section>
+            <select>
+                <option>hello</option>
+                <option>hello2</option>
+                <option>hello3</option>
+                <option>hello4</option>
+                <option>hello5</option>
+            </select>
+            <button  onclick="UserAction()" type="submit">Search</button>
+        </section> -->
+    </section>
+    <section class="newParams">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-more" style="background-image: url('images/bg-01.jpg');"></div>
+                <div class="login100-form validate-form">
+                    <span class="login100-form-title p-b-34">
+                        New Month Price
+                    </span>
+
+                    <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20" data-validate="Type wallet number">
+                        <input id="Param-String" class="input100" type="text" name="username" placeholder="Param Text">
+                        <span class="focus-input100"></span>
+                    </div>
+                    <div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20" data-validate="Type password">
+                        <input class="Param-Price input100" type="password" name="pass" placeholder="Price">
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn" onclick="setGreeting1()">
+                            Register new parameters.
+                        </button>
+                    </div>
+
+                    <div class="w-full text-center p-t-27 p-b-239">
+                        <span class="txt1">
+                            Please enter your month with year(aug-2018) as a parameter for users and the value to be paid in wei. 
+                        </span>
+                    </div>
+
+                    <div class="w-full text-center">
+                        <a href="#" class="txt3">
+                            Main Page
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 </body>
 </html>
