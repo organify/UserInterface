@@ -1,10 +1,6 @@
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 @font-face {
-  font-family: Poppins-Regular;
-  src: url("../fonts/poppins/Poppins-Regular.ttf"); }
-
-@font-face {
   font-family: Poppins-Medium;
   src: url("../fonts/poppins/Poppins-Medium.ttf"); }
 
@@ -15,10 +11,6 @@
 @font-face {
   font-family: Poppins-SemiBold;
   src: url("../fonts/poppins/Poppins-SemiBold.ttf"); }
-
-@font-face {
-  font-family: Montserrat-Bold;
-  src: url("../fonts/montserrat/Montserrat-Bold.ttf"); }
 
 /*//////////////////////////////////////////////////////////////////
   [ RESTYLE TAG ]*/
@@ -251,7 +243,8 @@ iframe {
   font-size: 18px;
   color: #666666;
   line-height: 1.2;
-  padding: 0 25px; }
+  padding: 0 25px;
+  height: 100%; }
 
 input.input100 {
   height: 55px; }
@@ -411,8 +404,113 @@ input.input100 {
   border-width: 1px; }
 
 .submission {
+  margin: 40px 0;
   display: grid;
-  grid-template-rows: 0.5fr 1.5fr .5fr; }
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .submission #product {
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+    margin: 5px 0;
+    text-align: center; }
+    .submission #product::-webkit-input-placeholder {
+      font-size: 2rem; }
+    .submission #product:-ms-input-placeholder {
+      font-size: 2rem; }
+    .submission #product::-ms-input-placeholder {
+      font-size: 2rem; }
+    .submission #product::placeholder {
+      font-size: 2rem; }
+  .submission #image {
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+    margin: 5px 0;
+    text-align: center; }
+    .submission #image::-webkit-input-placeholder {
+      font-size: 2rem; }
+    .submission #image:-ms-input-placeholder {
+      font-size: 2rem; }
+    .submission #image::-ms-input-placeholder {
+      font-size: 2rem; }
+    .submission #image::placeholder {
+      font-size: 2rem; }
+  .submission #timestamp {
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+    margin: 5px 0;
+    text-align: center; }
+    .submission #timestamp::-webkit-input-placeholder {
+      font-size: 2rem; }
+    .submission #timestamp:-ms-input-placeholder {
+      font-size: 2rem; }
+    .submission #timestamp::-ms-input-placeholder {
+      font-size: 2rem; }
+    .submission #timestamp::placeholder {
+      font-size: 2rem; }
+  .submission #eventName {
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+    margin: 5px 0;
+    text-align: center; }
+    .submission #eventName::-webkit-input-placeholder {
+      font-size: 2rem; }
+    .submission #eventName:-ms-input-placeholder {
+      font-size: 2rem; }
+    .submission #eventName::-ms-input-placeholder {
+      font-size: 2rem; }
+    .submission #eventName::placeholder {
+      font-size: 2rem; }
+  .submission #eventLocation {
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+    margin: 5px 0;
+    text-align: center; }
+    .submission #eventLocation::-webkit-input-placeholder {
+      font-size: 2rem; }
+    .submission #eventLocation:-ms-input-placeholder {
+      font-size: 2rem; }
+    .submission #eventLocation::-ms-input-placeholder {
+      font-size: 2rem; }
+    .submission #eventLocation::placeholder {
+      font-size: 2rem; }
+  .submission #eventDescripton {
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+    margin: 5px 0;
+    text-align: center; }
+    .submission #eventDescripton::-webkit-input-placeholder {
+      font-size: 2rem; }
+    .submission #eventDescripton:-ms-input-placeholder {
+      font-size: 2rem; }
+    .submission #eventDescripton::-ms-input-placeholder {
+      font-size: 2rem; }
+    .submission #eventDescripton::placeholder {
+      font-size: 2rem; }
+  .submission .btn-primary-2 {
+    width: 100%;
+    color: #fff; }
+    .submission .btn-primary-2:hover {
+      color: #fff;
+      background-color: #0069d9;
+      border-color: #0062cc; }
+  .submission .btn-primary-2:focus, .submission .btn-primary-2.focus {
+    -webkit-box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); }
+  .submission .btn-primary-2.disabled, .submission .btn-primary-2:disabled {
+    background-color: #007bff;
+    border-color: #007bff; }
+  .submission .btn-primary-2:active, .submission .btn-primary-2.active,
+  .submission .show > .btn-primary-2.dropdown-toggle {
+    background-color: #0069d9;
+    background-image: none;
+    border-color: #0062cc; }
 
 .submission a {
   width: 40%;

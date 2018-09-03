@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bigchaindb-driver": "^4.1.0",
     "geth": "^0.4.0",
     "openzeppelin-solidity": "1.12.0"
   }

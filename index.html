@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>test</title>
+    <title>Organify</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -26,6 +26,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
     <script src="js/deploy.js"></script>
+    <!-- <script src="js/bigchain/bigchainMain.js"></script> -->
     <script src="js/main.js"></script>
 </head>
 <body>
@@ -42,7 +43,12 @@
                         <span class="focus-input100"></span>
                     </div>
                     <div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20" data-validate="Type password">
-                        <input id="string" class="input100" type="password" name="pass" placeholder="Password">
+                        <input id="string" class="input100"  name="pass" placeholder="Password">
+                        <!-- <select class="Param-Price input100"  name="pass" placeholder="Price">
+                            <option>aug-18</option>
+                            <option>sept-18</option>
+                            <option>oct-18</option>
+                        </select> -->
                         <span class="focus-input100"></span>
                     </div>
 
@@ -74,33 +80,10 @@
         </div>
     </section>
     <div id="dropDownSelect1"></div>
-    <section class="container">
-        <div class="submission">
-            <h3>Please enter your product information here</h3>
-            <textarea type="text" id="farmInfo"></textarea>
-            <a href="#" onclick="setGreeting1()" class="btn btn-primary">Enter your information</a>
-    </div>
-        <h1>See the information you have entered:</h1>
-        <ul class="table-responsive">
-            <li class="append-1">
-                <p>First input:</p>
-            </li>
-        </ul>
-        <!-- <section>
-            <select>
-                <option>hello</option>
-                <option>hello2</option>
-                <option>hello3</option>
-                <option>hello4</option>
-                <option>hello5</option>
-            </select>
-            <button  onclick="UserAction()" type="submit">Search</button>
-        </section> -->
-    </section>
     <section class="newParams">
         <div class="container-login100">
             <div class="wrap-login100">
-                <div class="login100-more" style="background-image: url('images/bg-01.jpg');"></div>
+                <div class="login100-more" style="background-image: url('images/eth.jpg');"></div>
                 <div class="login100-form validate-form">
                     <span class="login100-form-title p-b-34">
                         New Month Price
@@ -111,7 +94,7 @@
                         <span class="focus-input100"></span>
                     </div>
                     <div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20" data-validate="Type password">
-                        <input class="Param-Price input100" type="password" name="pass" placeholder="Price">
+                        <input class="Param-Price input100"  name="pass" placeholder="Price">
                         <span class="focus-input100"></span>
                     </div>
 
@@ -136,5 +119,94 @@
             </div>
         </div>
     </section>
+    <section class="newParams">
+            <div class="container-login100">
+                <div class="wrap-login100">
+                    <div class="login100-more" style="background-image: url('images/eth.jpg');"></div>
+                    <div class="login100-form validate-form">
+                        <span class="login100-form-title p-b-34">
+                            New Month Price
+                        </span>
+    
+                        <select id="selectBox" onchange="storeWei();">
+                            <option>select an option</option>
+                            <option>aug-18</option>
+                            <option>3-months-bundle</option>
+                        </select>
+
+                        <div class="container-login100-form-btn">
+                            <button class="login100-form-btn" onclick="appendWei();">
+                                Your total is:
+                            </button>
+                        </div>
+                        
+                        <div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20">
+                            <p id="DealPrice"></p>
+                        </div>
+                        
+                        <div id="paymentbutton" class="container-login100-form-btn">
+                        </div>
+    
+                        <div class="w-full text-center p-t-27 p-b-239">
+                            <span class="txt1">
+                                Please enter your month with year(aug-2018) as a parameter for users and the value to be paid in wei. 
+                            </span>
+                        </div>
+    
+                        <div class="w-full text-center">
+                            <a href="#" class="txt3">
+                                Main Page
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 </body>
 </html>
+
+
+<script>
+    window.addEventListener('load', function () {
+        web3.version.getNetwork((err, netId) => {
+        switch (netId) {
+            case "1":
+            console.log('This is mainnet')
+            break
+            case "2":
+            console.log('This is the deprecated Morden test network.')
+            break
+            case "3":
+            console.log('This is the ropsten test network.')
+            break
+            case "4":
+            console.log('This is the Rinkeby test network.')
+            break
+            case "42":
+            console.log('This is the Kovan test network.')
+            break
+            default:
+            console.log('This is an unknown network.')
+        }
+        })
+
+        if (typeof web3 !== 'undefined') {
+            console.log('Web3 Detected! ' + web3.currentProvider.constructor.name)
+            window.web3 = new Web3(web3.currentProvider);
+        } else {
+            console.log('No Web3 Detected... using HTTP Provider')
+            window.web3 = new Web3(new Web3.providers.HttpProvider('https://ropsten.infura.io/[FWRMZMXII4UVR3UDW373EVEW1UUP1JK2WE]'));
+        }
+        console.log('codepen load' + web3.eth.accounts);
+        setTimeout(function() {
+                console.log('codepen timeout ' + web3.eth.accounts);
+        }, 2000)
+        var account = web3.eth.accounts[0];
+        var accountInterval = setInterval(function() {
+        if (web3.eth.accounts[0] !== account) {
+            account = web3.eth.accounts[0];
+            updateInterface();
+        }
+        }, 2000);
+    })
+</script>

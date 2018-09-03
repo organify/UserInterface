@@ -5,10 +5,6 @@
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
-@font-face {
-	font-family: Poppins-Regular;
-	src: url('../fonts/poppins/Poppins-Regular.ttf'); 
-  }
   
   @font-face {
 	font-family: Poppins-Medium;
@@ -23,11 +19,6 @@
   @font-face {
 	font-family: Poppins-SemiBold;
 	src: url('../fonts/poppins/Poppins-SemiBold.ttf'); 
-  }
-  
-  @font-face {
-	font-family: Montserrat-Bold;
-	src: url('../fonts/montserrat/Montserrat-Bold.ttf'); 
   }
   
   
@@ -285,6 +276,7 @@
 	color: #666666;
 	line-height: 1.2;
 	padding: 0 25px;
+	height:100%;
   }
   
   input.input100 {
@@ -506,8 +498,99 @@
     border-width: 1px;
 }
 .submission {
-    display: grid;
-    grid-template-rows: 0.5fr 1.5fr .5fr;
+	margin: 40px 0;
+	display: grid;
+	justify-content: center;
+	#product{
+		border: solid;
+		border-width: 1px;
+		border-color: black;
+		margin: 5px 0;
+		text-align: center;
+		// width: 60%;
+		&::placeholder{
+			font-size: 2rem;
+		}
+	}
+	#image{
+		border: solid;
+		border-width: 1px;
+		border-color: black;
+		margin: 5px 0;
+		text-align: center;
+		// width: 60%;
+		&::placeholder{
+			font-size: 2rem;
+		}
+	}
+	#timestamp{
+		border: solid;
+		border-width: 1px;
+		border-color: black;
+		margin: 5px 0;
+		text-align: center;
+		// width: 60%;
+		&::placeholder{
+			font-size: 2rem;
+		}
+	}
+	#eventName{
+		border: solid;
+		border-width: 1px;
+		border-color: black;
+		margin: 5px 0;
+		text-align: center;
+		// width: 60%;
+		&::placeholder{
+			font-size: 2rem;
+		}
+	}
+	#eventLocation{
+		border: solid;
+		border-width: 1px;
+		border-color: black;
+		margin: 5px 0;
+		text-align: center;
+		// width: 60%;
+		&::placeholder{
+			font-size: 2rem;
+		}
+	}
+	#eventDescripton{
+		border: solid;
+		border-width: 1px;
+		border-color: black;
+		margin: 5px 0;
+		text-align: center;
+		// width: 60%;
+		&::placeholder{
+			font-size: 2rem;
+		}
+	}
+	.btn-primary-2{
+		width: 100%;
+		color: #fff;
+		&:hover {
+			color: #fff;
+			background-color: #0069d9;
+			border-color: #0062cc;
+		}
+	}
+	.btn-primary-2:focus, .btn-primary-2.focus {
+		box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+	}
+	
+	.btn-primary-2.disabled, .btn-primary-2:disabled {
+		background-color: #007bff;
+		border-color: #007bff;
+	}
+	
+	.btn-primary-2:active, .btn-primary-2.active,
+	.show > .btn-primary-2.dropdown-toggle {
+		background-color: #0069d9;
+		background-image: none;
+		border-color: #0062cc;
+	}
 }
 
 .submission  a{

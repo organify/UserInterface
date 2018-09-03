@@ -17,14 +17,20 @@
   },
   "homepage": "https://github.com/organify/ethereum#readme",
   "dependencies": {
+    "bigchaindb-driver": "^4.1.0",
+    "bignumber.js": "^7.2.1",
+    "bip39": "^2.5.0",
+    "dotenv": "^6.0.0",
     "gulp-babel": "^7.0.1",
     "gulp-sass": "^4.0.1",
     "install": "^0.12.1",
     "jquery": "^3.3.1",
+    "localenvify": "^1.0.1",
     "npm": "^6.4.0",
     "openzeppelin-solidity": "^1.12.0",
     "truffle": "^4.1.14",
-    "web3": "^1.0.0-beta.35"
+    "web3": "^1.0.0-beta.35",
+    "webpack": "^4.17.1"
   },
   "devDependencies": {
     "gulp": "github:gulpjs/gulp#4.0"
